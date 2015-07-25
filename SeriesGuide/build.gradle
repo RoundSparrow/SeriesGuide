@@ -110,9 +110,9 @@ dependencies {
     compile project(':libraries:stickygridheaders')
     compile rootProject.ext.libraries.supportv4
     compile rootProject.ext.libraries.supportannotations
-    compile 'com.android.support:appcompat-v7:22.1.1'
-    compile "com.android.support:cardview-v7:22.1.1"
-    compile 'com.android.support:recyclerview-v7:22.1.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile "com.android.support:cardview-v7:22.2.1"
+    compile 'com.android.support:recyclerview-v7:22.2.1'
     compile('com.crashlytics.sdk.android:crashlytics:2.2.3@aar') {
         transitive = true
     }
@@ -139,9 +139,9 @@ dependencies {
     compile 'net.danlew:android.joda:2.7.1'
 
     // Google Play Services
-    compile 'com.google.android.gms:play-services-base:7.3.0'
-    compile 'com.google.android.gms:play-services-identity:7.3.0'
-    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+    compile 'com.google.android.gms:play-services-base:7.5.0'
+    compile 'com.google.android.gms:play-services-identity:7.5.0'
+    compile 'com.google.android.gms:play-services-analytics:7.5.0'
 
     // App Engine
     compile('com.google.api-client:google-api-client-android:1.19.0') {
