@@ -26,6 +26,7 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 22
+        multiDexEnabled true
 
         buildConfigField("String", "TVDB_API_KEY", "\"${loadStringPropertyOrPlaceholder("TVDB_API_KEY")}\"")
         buildConfigField("String", "TMDB_API_KEY", "\"${loadStringPropertyOrPlaceholder("TMDB_API_KEY")}\"")
@@ -139,10 +140,10 @@ dependencies {
     compile 'net.danlew:android.joda:2.7.1'
 
     // Google Play Services
-    // NOTE: updating form 7.3.0 to 7.5.0 results in a failure to build?
-    compile 'com.google.android.gms:play-services-base:7.3.0'
-    compile 'com.google.android.gms:play-services-identity:7.3.0'
-    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+    // NOTE: updating form 7.3.0 to 7.5.0 results in a failure to build due to 65535 method limit
+    compile 'com.google.android.gms:play-services-base:7.5.0'
+    compile 'com.google.android.gms:play-services-identity:7.5.0'
+    compile 'com.google.android.gms:play-services-analytics:7.5.0'
 
     // App Engine
     compile('com.google.api-client:google-api-client-android:1.19.0') {
@@ -160,4 +161,5 @@ dependencies {
     androidTestCompile rootProject.ext.libraries.supportannotations
     androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 
+    compile 'com.android.support:multidex:1.0.0'
 }

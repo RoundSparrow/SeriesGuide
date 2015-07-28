@@ -19,9 +19,12 @@ package com.battlelancer.seriesguide;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.ContentProvider;
+import android.content.Context;
 import android.os.StrictMode;
 import android.os.StrictMode.ThreadPolicy;
 import android.os.StrictMode.VmPolicy;
+import android.support.multidex.MultiDex;
+
 import com.battlelancer.seriesguide.settings.AppSettings;
 import com.battlelancer.seriesguide.settings.DisplaySettings;
 import com.battlelancer.seriesguide.util.Utils;
@@ -124,5 +127,15 @@ public class SeriesGuideApplication extends Application {
             vmPolicyBuilder.detectLeakedRegistrationObjects();
         }
         StrictMode.setVmPolicy(vmPolicyBuilder.build());
+    }
+
+
+    /*
+     MAvoid DexIndexOverflowException
+     */
+    @Override
+    public void attachBaseContext(Context base) {
+        MultiDex.install(base);
+        super.attachBaseContext(base);
     }
 }
