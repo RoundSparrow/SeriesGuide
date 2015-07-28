@@ -109,11 +109,13 @@ dependencies {
     compile project(':api')
     compile project(':libraries:drag-sort-listview')
     compile project(':libraries:stickygridheaders')
+
     compile rootProject.ext.libraries.supportv4
     compile rootProject.ext.libraries.supportannotations
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile "com.android.support:cardview-v7:22.2.1"
     compile 'com.android.support:recyclerview-v7:22.2.1'
+
     compile('com.crashlytics.sdk.android:crashlytics:2.2.3@aar') {
         transitive = true
     }
