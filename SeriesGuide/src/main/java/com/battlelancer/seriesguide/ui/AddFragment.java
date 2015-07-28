@@ -31,8 +31,9 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import com.battlelancer.seriesguide.R;
 import com.battlelancer.seriesguide.items.SearchResult;
 import com.battlelancer.seriesguide.ui.dialogs.AddShowDialogFragment;
@@ -50,17 +51,17 @@ public abstract class AddFragment extends Fragment {
     public static class AddShowEvent {
     }
 
-    @InjectView(R.id.containerAddContent) View contentContainer;
-    @InjectView(R.id.progressBarAdd) View progressBar;
-    @InjectView(android.R.id.list) GridView resultsGridView;
-    @InjectView(R.id.emptyViewAdd) TextView emptyView;
+    @Bind(R.id.containerAddContent) View contentContainer;
+    @Bind(R.id.progressBarAdd) View progressBar;
+    @Bind(android.R.id.list) GridView resultsGridView;
+    @Bind(R.id.emptyViewAdd) TextView emptyView;
 
     protected List<SearchResult> searchResults;
     protected AddAdapter adapter;
 
     /**
      * Implementers should inflate their own layout and inject views with {@link
-     * butterknife.ButterKnife#inject(Object, android.view.View)}.
+     * butterknife.ButterKnife#bind(Object, android.view.View)}.
      */
     @Override
     public abstract View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -98,7 +99,7 @@ public abstract class AddFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
 
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 
     /**
